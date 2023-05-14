@@ -13,9 +13,11 @@ namespace HttpCookie.WebApplication2.cooki
         protected void Page_Load(object sender, EventArgs e)
         {
             Response.Cookies["userName"].Value = "Annathurai";
-            Response.Write(Request.Cookies["userName"].Value);
+            Response.Cookies["id"].Value = "1";
+            var x = Request.Cookies["userName"].Value;
             var c = HttpContext.Current.Request.Cookies["userName"].Value;
-            Response.Write(c);
+            var id = int.Parse(Request.Cookies["id"].Value);
+            Response.Write(id+1);
         }
     }
 }
